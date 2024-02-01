@@ -1,0 +1,19 @@
+{
+  "_class": ["OneFileForAllRegions", "ShapeToMask", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 4,
+    "timeInMinutes": 10,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 40
+  },
+  "nLon": 4320,
+  "nLat": 2160,
+  "shapeFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
+  "outFilePrefix": "out/maskDoseArcmin5",
+  "metaOutFilePath": "out/metaDose.csv",
+  "idColumnName": ""
+}

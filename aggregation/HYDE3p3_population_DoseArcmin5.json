@@ -1,0 +1,32 @@
+{
+  "_class": ["SumAggregation", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 1,
+    "timeInMinutes": 5,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 63,
+    "jobIdx": 1
+  },
+  "targetFormat": {
+    "_class": ["GridFormat", "Opts"],
+    "nLon": 4320,
+    "nLat": 2160,
+    "lonIncreasing": true,
+    "latIncreasing": false,
+    "lonFirst": true
+  },
+  "maskFilePath": "{CER_DATA}/masks/maskDoseArcmin5.nc",
+  "maskSumFilePath": "{CER_DATA}/masks/maskDoseArcmin5_sum.nc",
+  "boundingBoxFilePath": "{CER_DATA}/masks/maskDoseArcmin5_boundingBox.nc",
+  "variableDataDescriptor": {
+    "_class": ["SingleFile", "DataDescriptor", "Opts"],
+    "filePath": "{CER_DATA}/HYDE3.3/population.nc"
+  },
+  "outFilePrefix": "{CER_VARIABLE}/HYDE/HYDE3p3_DoseArcmin5",
+  "yearsFilter": null,
+  "regionFilter": null
+}

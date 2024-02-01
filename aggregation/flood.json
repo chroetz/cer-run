@@ -1,0 +1,50 @@
+{
+  "_class": ["AggregateNaryMasked", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 3,
+    "timeInMinutes": 100,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 100
+  },
+  "maskFilePath": "{CER_DATA}/masks/maskDoseArcmin1.nc",
+  "maskSumFilePath": "{CER_DATA}/masks/maskDoseArcmin1_sum.nc",
+  "boundingBoxFilePath": "{CER_DATA}/masks/maskDoseArcmin1_boundingBox.nc",
+  "variableDataDescriptorList": {
+    "_class": ["DataDescriptor", "List", "Opts"],
+    "list": [
+      {
+        "_class": ["YearlyFiles", "DataDescriptor", "Opts"],
+        "name": "flood",
+        "dirPath": "/p/tmp/cschoetz/christof_flddph_1arcmin_ISIMIP3a",
+        "pattern": "cama-flood_([^_]+)_gswp3-w5e5_obsclim_histsoc_default_flddph_([^_]+)_1arcmin_global_(\\d{4}).nc",
+        "recursive": true
+      },
+      {
+        "_class": ["SingleFile", "DataDescriptor", "Opts"],
+        "name": "pop",
+        "setNaToZero": true,
+        "blowUpLon": 5,
+        "blowUpLat": 5,
+        "filePath": "{CER_DATA}/HYDE3.3/population.nc"
+      }
+    ]
+  },
+  "aggregateTextList": {
+    "popWeightedFlddph": "sum(mask * pop * flood, na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt0": "sum(mask * pop * (flood>0), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt0p25": "sum(mask * pop * (flood>0.25), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt0p5": "sum(mask * pop * (flood>0.5), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt1": "sum(mask * pop * (flood>1), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt2": "sum(mask * pop * (flood>2), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt4": "sum(mask * pop * (flood>4), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt8": "sum(mask * pop * (flood>8), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt16": "sum(mask * pop * (flood>16), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)"
+  },
+  "outFilePrefix": "{CER_VARIABLE}/flood/flood",
+  "yearsFilter": null,
+  "regionRegex": null
+}

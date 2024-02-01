@@ -1,0 +1,15 @@
+{
+  "_class": ["ConcatNetCdf", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 8,
+    "timeInMinutes": 1000,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log"
+  },
+  "outFilePath": "out/maskDoseArcmin1.nc",
+  "inDirPath": "out",
+  "inFilePattern": "maskDoseArcmin1_\\d{4}_to_\\d{4}\\.nc"
+}

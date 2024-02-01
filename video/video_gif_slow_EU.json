@@ -1,0 +1,17 @@
+{
+  "_class": ["ImagesToVideo", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 2,
+    "timeInMinutes": 60,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log"
+  },
+  "imageDirPath": "{CER_EXPLORE}/maps/image/EU",
+  "outDirPath": "{CER_EXPLORE}/maps/video/EU",
+  "frameRate": 2,
+  "outFormat": "gif",
+  "keepInfoTxtFile": false
+}

@@ -1,0 +1,25 @@
+{
+  "_class": ["Summary", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 6,
+    "timeInMinutes": 15,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log"
+  },
+  "outFilePath": "{CER_EXPLORE}/summary/Storm-thresh34kt.html",
+  "dataFilePath": "{CER_VARIABLE}/storm/storm.csv",
+  "variableName": "thresh34kt",
+  "regionNameDelim": ".",
+  "regionNamePartNames": ["GID_0", "subRegionId"],
+  "countryName": "GID_0",
+  "shapeRegionFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
+  "shapeCountryFilePath": "{CER_DATA}/shapefile/GADM/gadm36_levels.gpkg",
+  "shapeCountryLayer": "level0",
+  "regionRegex": null,
+  "countryRegex": null,
+  "aggregateFunctionsText": "list(mean = \\(x) mean(x, na.rm=TRUE), sd = \\(x) sd(x, na.rm=TRUE))",
+  "transformationsText": "list(mean = c('identity', 'log10'), sd = 'identity')"
+}

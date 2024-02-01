@@ -1,0 +1,27 @@
+{
+  "_class": ["CreateMaps", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 4,
+    "timeInMinutes": 5,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 36
+  },
+  "dataFilePath": "{CER_VARIABLE}/storm/storm.csv",
+  "dataVariableName": "thresh34kt",
+  "dataRegionName": "GID_1",
+  "dataTimeName": "year",
+  "variableTrans": "identity",
+  "regionRegex": "AUT|BEL|BGR|HRV|CYP|CZE|DNK|EST|FIN|FRA|DEU|GRC|HUN|IRL|ITA|LVA|LTU|LUX|MLT|NLD|POL|PRT|ROU|SVK|SVN|ESP|SWE",
+  "limits": [0, 1.0],
+  "outOfBoundsHandling": "squish",
+  "shapeFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
+  "shapeRegionName": "GID_1",
+  "outDirPath": "{CER_EXPLORE}/maps/image/EU",
+  "widthInPx": 1080,
+  "heightInPx": 1080,
+  "dpi": 150
+}

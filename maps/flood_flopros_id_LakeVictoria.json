@@ -1,0 +1,25 @@
+{
+  "_class": ["CreateMaps", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 4,
+    "timeInMinutes": 5,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 60
+  },
+  "dataFilePath": "{CER_VARIABLE}/flood/flood_flopros.csv",
+  "dataVariableName": "shareOfPeopleAffectedByFlddphGt0",
+  "dataRegionName": "GID_1",
+  "dataTimeName": "year",
+  "variableTrans": "identity",
+  "regionRegex": "UGA|KEN|TZA",
+  "shapeFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
+  "shapeRegionName": "GID_1",
+  "outDirPath": "{CER_EXPLORE}/maps/image/LakeVictoria",
+  "widthInPx": 1080,
+  "heightInPx": 1080,
+  "dpi": 150
+}

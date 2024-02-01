@@ -1,0 +1,16 @@
+{
+  "_class": ["BoundingBoxes", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 2,
+    "timeInMinutes": 500,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 1,
+    "jobIdx": 1
+  },
+  "maskFilePath": "out/maskDoseArcmin1.nc",
+  "regionVariableName": "regionName"
+}

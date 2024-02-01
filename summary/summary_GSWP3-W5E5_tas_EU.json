@@ -1,0 +1,26 @@
+{
+  "_class": ["Summary", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 2,
+    "timeInMinutes": 3,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log"
+  },
+  "outFilePath": "{CER_EXPLORE}/summary/GSWP3_W5E5-tas-EU.html",
+  "dataFilePath": "{CER_VARIABLE}/gswp3-w5e5/tasDoseYear_pop_1950-2019.csv",
+  "variableName": "tasMean_pop",
+  "regionName": "iso",
+  "regionNameDelim": ".",
+  "regionNamePartNames": ["GID_0", "subRegionId"],
+  "countryName": "GID_0",
+  "shapeRegionFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
+  "shapeCountryFilePath": "{CER_DATA}/shapefile/GADM/gadm36_levels.gpkg",
+  "shapeCountryLayer": "level0",
+  "regionRegex": "AUT|BEL|BGR|HRV|CYP|CZE|DNK|EST|FIN|FRA|DEU|GRC|HUN|IRL|ITA|LVA|LTU|LUX|MLT|NLD|POL|PRT|ROU|SVK|SVN|ESP|SWE",
+  "countryRegex": "AUT|BEL|BGR|HRV|CYP|CZE|DNK|EST|FIN|FRA|DEU|GRC|HUN|IRL|ITA|LVA|LTU|LUX|MLT|NLD|POL|PRT|ROU|SVK|SVN|ESP|SWE",
+  "aggregateFunctionsText": "list(mean = \\(x) mean(x, na.rm=TRUE), sd = \\(x) sd(x, na.rm=TRUE))",
+  "transformationsText": "list(mean = c('identity', 'log10'), sd = 'identity')"
+}

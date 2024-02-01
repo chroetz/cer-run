@@ -1,0 +1,17 @@
+{
+  "_class": ["OneFilePerRegion", "ShapeToMask", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "short",
+    "cpusPerTask": 1,
+    "timeInMinutes": 60,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log"
+  },
+  "nLon": 360,
+  "nLat": 180,
+  "shapeDirPath": "{CER_DATA}/shapefile/isimip",
+  "shapeFilePattern": "/country\\.geojson$",
+  "outFilePath": "out/maskIsimipArcmin60.nc"
+}

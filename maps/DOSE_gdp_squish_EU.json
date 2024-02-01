@@ -1,0 +1,30 @@
+{
+  "_class": ["CreateMaps", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 4,
+    "timeInMinutes": 5,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 63
+  },
+  "optsAfterwardsAlwaysFilePaths": ["{CER_RUN}/video/video_gif_slow_EU.json"],
+  "optsAfterwardsIfOkFilePaths": null,
+  "dataFilePath": "{CER_VARIABLE}/DOSE/DOSE_V2.csv",
+  "dataVariableName": "grp_pc_usd_2015",
+  "dataRegionName": "GID_1",
+  "dataTimeName": "year",
+  "variableTrans": "identity",
+  "regionRegex": "AUT|BEL|BGR|HRV|CYP|CZE|DNK|EST|FIN|FRA|DEU|GRC|HUN|IRL|ITA|LVA|LTU|LUX|MLT|NLD|POL|PRT|ROU|SVK|SVN|ESP|SWE",
+  "limits": [null, 1e5],
+  "outOfBoundsHandling": "squish",
+  "shapeFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
+  "shapeRegionName": "GID_1",
+  "outDirPath": "{CER_EXPLORE}/maps/image/EU",
+  "outFileGlue": "{dataSetName}_{dataVariableName}_squish_{dataTimeValue}.png",
+  "widthInPx": 1080,
+  "heightInPx": 1080,
+  "dpi": 150
+}

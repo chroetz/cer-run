@@ -1,0 +1,24 @@
+{
+  "_class": ["CreateMaps", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 4,
+    "timeInMinutes": 5,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 70
+  },
+  "dataFilePath": "{CER_VARIABLE}/gswp3-w5e5/prDoseYear_pop_1950-2019.csv",
+  "dataVariableName": "prMean_pop",
+  "dataRegionName": "iso",
+  "dataTimeName": "year",
+  "variableTrans": "identity",
+  "shapeFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
+  "shapeRegionName": "GID_1",
+  "outDirPath": "{CER_EXPLORE}/maps/image/World",
+  "widthInPx": 1920,
+  "heightInPx": 1080,
+  "dpi": 150
+}

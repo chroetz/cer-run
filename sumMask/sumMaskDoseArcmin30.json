@@ -1,0 +1,16 @@
+{
+  "_class": ["SumMask", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "short",
+    "cpusPerTask": 1,
+    "timeInMinutes": 1,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 1,
+    "jobIdx": 1
+  },
+  "maskFilePath": "out/maskDoseArcmin30.nc",
+  "outFilePath": "out/maskDoseArcmin30_sum.nc"
+}

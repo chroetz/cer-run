@@ -1,0 +1,25 @@
+{
+  "_class": ["Summary", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 6,
+    "timeInMinutes": 15,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log"
+  },
+  "outFilePath": "{CER_EXPLORE}/summary/DOSE-log2_growth_grp_pc_usd_2015.html",
+  "dataFilePath": "{CER_VARIABLE}/DOSE/DOSE_V2_growth.csv",
+  "variableName": "log2_growth_grp_pc_usd_2015",
+  "regionNameDelim": ".",
+  "regionNamePartNames": ["GID_0", "subRegionId"],
+  "countryName": "GID_0",
+  "shapeRegionFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
+  "shapeCountryFilePath": "{CER_DATA}/shapefile/GADM/gadm36_levels.gpkg",
+  "shapeCountryLayer": "level0",
+  "regionRegex": null,
+  "countryRegex": null,
+  "aggregateFunctionsText": "list(mean = \\(x) mean(x, na.rm=TRUE), sd = \\(x) sd(x, na.rm=TRUE))",
+  "transformationsText": "list(mean = 'identity', sd = 'identity')"
+}
