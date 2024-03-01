@@ -1,5 +1,7 @@
 #%Module
-module load R/4.2.0/gcc-mkl compiler/gnu/10.2.0 gdal/gcc/3.0.4 sqlite/3.27.1 geos/3.9.1 proj4/6.3.1 udunits/2.2.28
-module load netcdf-c/4.6.2/intel/parallel
+module load R/4.2.0/gcc-mkl
+module load netcdf-c/4.6.1/intel/parallel
+module load compiler/gnu/10.2.0 gdal/gcc/3.0.4 sqlite/3.27.1 geos/3.9.1 proj4/6.3.1 udunits/2.2.28
 module load ffmpeg
+module load curl
 module load pandoc

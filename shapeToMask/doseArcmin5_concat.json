@@ -9,7 +9,7 @@
     "mail": true,
     "logDirPath": "{CER_RUN}/_log"
   },
-  "outFilePath": "out/maskDoseArcmin5.nc",
-  "inDirPath": "out",
-  "inFilePattern": "maskDoseArcmin5_\\d{4}_to_\\d{4}\\.nc"
+  "outFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin5.nc",
+  "inDirPath": "{CER_PROCESSED}/mask",
+  "inFilePattern": "maskDoseArcmin5_\\d+\\.nc"
 }

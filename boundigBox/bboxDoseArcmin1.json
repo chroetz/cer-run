@@ -8,9 +8,8 @@
     "timeInMinutes": 500,
     "mail": true,
     "logDirPath": "{CER_RUN}/_log",
-    "nJobs": 1,
-    "jobIdx": 1
+    "nJobs": 1
   },
-  "maskFilePath": "out/maskDoseArcmin1.nc",
+  "maskFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin1.nc",
   "regionVariableName": "regionName"
 }

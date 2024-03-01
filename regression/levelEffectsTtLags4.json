@@ -1,0 +1,64 @@
+{
+    "_class": ["Regression", "Run", "Opts"],
+    "slurm": {
+        "_class": ["Slurm", "Opts"],
+        "prefix": "run",
+        "qos": "standby",
+        "cpusPerTask": 8,
+        "timeInMinutes": 60,
+        "mail": true,
+        "logDirPath": "./_log",
+        "nJobs": 7
+    },
+    "dataFilePath": "{CER_VARIABLE}/dataLaggedClean.csv",
+    "outFilePath": "{CER_REGRESSION}/levelEffectsTtLag4.RDS",
+    "variableListList": [
+      {
+        "name": "dtas",
+        "targetVariable": "log2growth",
+        "predictors": ["dtas", "dtas_lag1", "dtas_lag2", "dtas_lag3", "dtas_lag4"],
+        "fixedEffects": ["GID_1", "as.character(year)", "year:GID_1"]
+      },
+      {
+        "name": "dpr",
+        "targetVariable": "log2growth",
+        "predictors": ["dpr", "dpr_lag1", "dpr_lag2", "dpr_lag3", "dpr_lag4"],
+        "fixedEffects": ["GID_1", "as.character(year)", "year:GID_1"]
+      },
+      {
+        "name": "dstorm",
+        "targetVariable": "log2growth",
+        "predictors": ["dstorm", "dstorm_lag1", "dstorm_lag2", "dstorm_lag3", "dstorm_lag4"],
+        "fixedEffects": ["GID_1", "as.character(year)", "year:GID_1"]
+      },
+      {
+        "name": "ddrought",
+        "targetVariable": "log2growth",
+        "predictors": ["ddrought", "ddrought_lag1", "ddrought_lag2", "ddrought_lag3", "ddrought_lag4"],
+        "fixedEffects": ["GID_1", "as.character(year)", "year:GID_1"]
+      },
+      {
+        "name": "dflood",
+        "targetVariable": "log2growth",
+        "predictors": ["dflood", "dflood_lag1", "dflood_lag2", "dflood_lag3", "dflood_lag4"],
+        "fixedEffects": ["GID_1", "as.character(year)", "year:GID_1"]
+      },
+      {
+        "name": "dpop",
+        "targetVariable": "log2growth",
+        "predictors": ["dpop", "dpop_lag1", "dpop_lag2", "dpop_lag3", "dpop_lag4"],
+        "fixedEffects": ["GID_1", "as.character(year)", "year:GID_1"]
+      },
+      {
+        "name": "dtasDev11",
+        "targetVariable": "log2growth",
+        "predictors": ["dtasDev11", "dtasDev11_lag1", "dtasDev11_lag2", "dtasDev11_lag3", "dtasDev11_lag4"],
+        "fixedEffects": ["GID_1", "as.character(year)", "year:GID_1"]
+      }
+    ],
+    "regionName": "GID_1",
+    "timeName": "year",
+    "timeRange": null,
+    "regionRegex": null
+  }
+  

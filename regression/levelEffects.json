@@ -1,0 +1,64 @@
+{
+    "_class": ["Regression", "Run", "Opts"],
+    "slurm": {
+        "_class": ["Slurm", "Opts"],
+        "prefix": "run",
+        "qos": "standby",
+        "cpusPerTask": 2,
+        "timeInMinutes": 15,
+        "mail": true,
+        "logDirPath": "./_log",
+        "nJobs": 7
+    },
+    "dataFilePath": "{CER_VARIABLE}/dataLaggedClean.csv",
+    "outFilePath": "{CER_REGRESSION}/levelEffects.RDS",
+    "variableListList": [
+      {
+        "name": "dtas",
+        "targetVariable": "log2growth",
+        "predictors": ["dtas", "dtas_lag1", "dtas_lag2", "dtas_lag3", "dtas_lag4", "dtas_lag5", "dtas_lag6", "dtas_lag7", "dtas_lag8", "dtas_lag9", "dtas_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "dpr",
+        "targetVariable": "log2growth",
+        "predictors": ["dpr", "dpr_lag1", "dpr_lag2", "dpr_lag3", "dpr_lag4", "dpr_lag5", "dpr_lag6", "dpr_lag7", "dpr_lag8", "dpr_lag9", "dpr_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "dstorm",
+        "targetVariable": "log2growth",
+        "predictors": ["dstorm", "dstorm_lag1", "dstorm_lag2", "dstorm_lag3", "dstorm_lag4", "dstorm_lag5", "dstorm_lag6", "dstorm_lag7", "dstorm_lag8", "dstorm_lag9", "dstorm_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "ddrought",
+        "targetVariable": "log2growth",
+        "predictors": ["ddrought", "ddrought_lag1", "ddrought_lag2", "ddrought_lag3", "ddrought_lag4", "ddrought_lag5", "ddrought_lag6", "ddrought_lag7", "ddrought_lag8", "ddrought_lag9", "ddrought_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "dflood",
+        "targetVariable": "log2growth",
+        "predictors": ["dflood", "dflood_lag1", "dflood_lag2", "dflood_lag3", "dflood_lag4", "dflood_lag5", "dflood_lag6", "dflood_lag7", "dflood_lag8", "dflood_lag9", "dflood_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "dpop",
+        "targetVariable": "log2growth",
+        "predictors": ["dpop", "dpop_lag1", "dpop_lag2", "dpop_lag3", "dpop_lag4", "dpop_lag5", "dpop_lag6", "dpop_lag7", "dpop_lag8", "dpop_lag9", "dpop_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "dtasDev11",
+        "targetVariable": "log2growth",
+        "predictors": ["dtasDev11", "dtasDev11_lag1", "dtasDev11_lag2", "dtasDev11_lag3", "dtasDev11_lag4", "dtasDev11_lag5", "dtasDev11_lag6", "dtasDev11_lag7", "dtasDev11_lag8", "dtasDev11_lag9", "dtasDev11_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      }
+    ],
+    "regionName": "GID_1",
+    "timeName": "year",
+    "timeRange": null,
+    "regionRegex": null
+  }
+  

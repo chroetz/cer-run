@@ -3,14 +3,13 @@
   "slurm": {
     "_class": ["Slurm", "Opts"],
     "prefix": "run",
-    "qos": "short",
+    "qos": "standby",
     "cpusPerTask": 1,
     "timeInMinutes": 1,
     "mail": true,
     "logDirPath": "{CER_RUN}/_log",
-    "nJobs": 1,
-    "jobIdx": 1
+    "nJobs": 1
   },
-  "maskFilePath": "out/maskIsimipArcmin60.nc",
+  "maskFilePath": "{CER_PROCESSED}/mask/maskIsimipArcmin60.nc",
   "regionVariableName": "regionName"
 }

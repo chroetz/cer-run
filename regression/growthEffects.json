@@ -1,0 +1,64 @@
+{
+    "_class": ["Regression", "Run", "Opts"],
+    "slurm": {
+        "_class": ["Slurm", "Opts"],
+        "prefix": "run",
+        "qos": "standby",
+        "cpusPerTask": 2,
+        "timeInMinutes": 15,
+        "mail": true,
+        "logDirPath": "./_log",
+        "nJobs": 7
+    },
+    "dataFilePath": "{CER_VARIABLE}/dataLaggedClean.csv",
+    "outFilePath": "{CER_REGRESSION}/growthEffects.RDS",
+    "variableListList": [
+      {
+        "name": "tas",
+        "targetVariable": "log2growth",
+        "predictors": ["tas", "tas_lag1", "tas_lag2", "tas_lag3", "tas_lag4", "tas_lag5", "tas_lag6", "tas_lag7", "tas_lag8", "tas_lag9", "tas_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "pr",
+        "targetVariable": "log2growth",
+        "predictors": ["pr", "pr_lag1", "pr_lag2", "pr_lag3", "pr_lag4", "pr_lag5", "pr_lag6", "pr_lag7", "pr_lag8", "pr_lag9", "pr_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "storm",
+        "targetVariable": "log2growth",
+        "predictors": ["storm", "storm_lag1", "storm_lag2", "storm_lag3", "storm_lag4", "storm_lag5", "storm_lag6", "storm_lag7", "storm_lag8", "storm_lag9", "storm_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "drought",
+        "targetVariable": "log2growth",
+        "predictors": ["drought", "drought_lag1", "drought_lag2", "drought_lag3", "drought_lag4", "drought_lag5", "drought_lag6", "drought_lag7", "drought_lag8", "drought_lag9", "drought_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "flood",
+        "targetVariable": "log2growth",
+        "predictors": ["flood", "flood_lag1", "flood_lag2", "flood_lag3", "flood_lag4", "flood_lag5", "flood_lag6", "flood_lag7", "flood_lag8", "flood_lag9", "flood_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "pop",
+        "targetVariable": "log2growth",
+        "predictors": ["pop", "pop_lag1", "pop_lag2", "pop_lag3", "pop_lag4", "pop_lag5", "pop_lag6", "pop_lag7", "pop_lag8", "pop_lag9", "pop_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      },
+      {
+        "name": "tasDev11",
+        "targetVariable": "log2growth",
+        "predictors": ["tasDev11", "tasDev11_lag1", "tasDev11_lag2", "tasDev11_lag3", "tasDev11_lag4", "tasDev11_lag5", "tasDev11_lag6", "tasDev11_lag7", "tasDev11_lag8", "tasDev11_lag9", "tasDev11_lag10"],
+        "fixedEffects": ["GID_1", "as.character(year)"]
+      }
+    ],
+    "regionName": "GID_1",
+    "timeName": "year",
+    "timeRange": null,
+    "regionRegex": null
+  }
+  

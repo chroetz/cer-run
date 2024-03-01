@@ -11,6 +11,6 @@
     "nJobs": 1,
     "jobIdx": 1
   },
-  "maskFilePath": "out/maskIsimipArcmin60.nc",
-  "outFilePath": "out/maskIsimipArcmin60_sum.nc"
+  "maskFilePath": "{CER_PROCESSED}/mask/maskIsimipArcmin60.nc",
+  "outFilePath": "{CER_PROCESSED}/mask/maskIsimipArcmin60_sum.nc"
 }

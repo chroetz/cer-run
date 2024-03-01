@@ -1,0 +1,27 @@
+{
+  "_class": ["CreateMaps", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 4,
+    "timeInMinutes": 5,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 60
+  },
+  "dataFilePath": "{CER_REGRESSION}/dtas9influence.csv",
+  "dataVariableName": "infl",
+  "dataRegionName": "GID_1",
+  "dataTimeName": "year",
+  "variableTrans": "identity",
+  "limits": [-0.1, 0.1],
+  "outOfBoundsHandling": "squish",
+  "shapeFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
+  "shapeRegionName": "GID_1",
+  "outDirPath": "{CER_EXPLORE}/maps/image/Regression",
+  "outFileGlue": "{dataSetName}_{dataVariableName}_squish_{dataTimeValue}.png",
+  "widthInPx": 1920,
+  "heightInPx": 1080,
+  "dpi": 150
+}

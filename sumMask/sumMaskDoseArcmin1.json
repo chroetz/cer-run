@@ -11,6 +11,6 @@
     "nJobs": 1,
     "jobIdx": 1
   },
-  "maskFilePath": "out/maskDoseArcmin1.nc",
-  "outFilePath": "out/maskDoseArcmin1_sum.nc"
+  "maskFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin1.nc",
+  "outFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin1_sum.nc"
 }

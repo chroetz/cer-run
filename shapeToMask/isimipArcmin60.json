@@ -3,7 +3,7 @@
   "slurm": {
     "_class": ["Slurm", "Opts"],
     "prefix": "run",
-    "qos": "short",
+    "qos": "standby",
     "cpusPerTask": 1,
     "timeInMinutes": 60,
     "mail": true,
@@ -13,5 +13,5 @@
   "nLat": 180,
   "shapeDirPath": "{CER_DATA}/shapefile/isimip",
   "shapeFilePattern": "/country\\.geojson$",
-  "outFilePath": "out/maskIsimipArcmin60.nc"
+  "outFilePath": "{CER_PROCESSED}/mask/maskIsimipArcmin60.nc"
 }

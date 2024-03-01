@@ -3,17 +3,18 @@
   "slurm": {
     "_class": ["Slurm", "Opts"],
     "prefix": "run",
-    "qos": "short",
+    "qos": "standby",
     "cpusPerTask": 2,
     "timeInMinutes": 2,
-    "mail": true,
+    "mail": false,
     "logDirPath": "{CER_RUN}/_log",
     "nJobs": 10
   },
   "nLon": 360,
   "nLat": 180,
   "shapeFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
-  "outFilePrefix": "out/maskDoseArcmin60",
-  "metaOutFilePath": "out/metaDose.csv",
-  "idColumnName": ""
+  "outFilePrefixPath": "{CER_PROCESSED}/mask/maskDoseArcmin60",
+  "metaOutFilePath": "{CER_PROCESSED}/mask/metaDose.csv",
+  "idColumnName": "",
+  "optsAfterwardsIfOkFilePaths": "{CER_RUN}/shapeToMask/doseArcmin60_concat.json"
 }

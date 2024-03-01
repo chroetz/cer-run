@@ -44,7 +44,7 @@
     "shareOfPeopleAffectedByFlddphGt8": "sum(mask * pop * (flood>8), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)",
     "shareOfPeopleAffectedByFlddphGt16": "sum(mask * pop * (flood>16), na.rm = TRUE) / sum(mask * pop, na.rm = TRUE)"
   },
-  "outFilePrefix": "{CER_VARIABLE}/flood/flood",
+  "outFilePrefixPath": "{CER_VARIABLE}/flood/flood",
   "yearsFilter": null,
   "regionRegex": null
 }

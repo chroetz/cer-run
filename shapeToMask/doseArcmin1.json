@@ -13,7 +13,8 @@
   "nLon": 21600,
   "nLat": 10800,
   "shapeFilePath": "{CER_DATA}/shapefile/DOSE/W2013Final.gpkg",
-  "outFilePrefix": "out/maskDoseArcmin1",
-  "metaOutFilePath": "out/metaDose.csv",
-  "idColumnName": ""
+  "outFilePrefixPath": "{CER_PROCESSED}/mask/maskDoseArcmin1",
+  "metaOutFilePath": "{CER_PROCESSED}/mask/metaDose.csv",
+  "idColumnName": "",
+  "optsAfterwardsIfOkFilePaths": "{CER_RUN}/shapeToMask/doseArcmin1_concat.json"
 }
