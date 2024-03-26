@@ -1,0 +1,56 @@
+{
+  "_class": ["AggregateNaryMasked", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 4,
+    "timeInMinutes": 100,
+    "mail": true,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 100
+  },
+  "maskFilePath": "/p/tmp/cschoetz/data/masks/maskDoseArcmin1.nc",
+  "maskSumFilePath": "/p/tmp/cschoetz/data/masks/maskDoseArcmin1_sum.nc",
+  "boundingBoxFilePath": "/p/tmp/cschoetz/data/masks/maskDoseArcmin1_boundingBox.nc",
+  "variableDataDescriptorList": {
+    "_class": ["DataDescriptor", "List", "Opts"],
+    "list": [
+      {
+        "_class": ["YearlyFiles", "DataDescriptor", "Opts"],
+        "name": "flood",
+        "dirPath": "/p/tmp/cschoetz/christof_flddph_1arcmin_ISIMIP3a",
+        "pattern": "cama-flood_([^_]+)_gswp3-w5e5_obsclim_histsoc_default_flddph_([^_]+)_1arcmin_global_(\\d{4}).nc",
+        "recursive": true
+      },
+      {
+        "_class": ["LabelFileTimeless", "DataDescriptor", "Opts"],
+        "name": "zero",
+        "dirPath": "{CER_PROCESSED}/flood",
+        "pattern": "([^_]+)_climatology\\.nc",
+        "dataVariableName": "zero"
+      },
+      {
+        "_class": ["SingleFile", "DataDescriptor", "Opts"],
+        "name": "pop",
+        "setNaToZero": true,
+        "blowUpLon": 5,
+        "blowUpLat": 5,
+        "filePath": "{CER_DATA}/HYDE3p3/population.nc"
+      }
+    ]
+  },
+  "aggregateTextList": {
+    "popWeightedFlddph": "{.w <<- mask * pop * (zero>0.5);.w <<- .w/sum(.w, na.rm = TRUE);sum(flood * .w, na.rm = TRUE)}",
+    "shareOfPeopleAffectedByFlddphGt0": "sum((flood>0) * .w, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt0p25": "sum((flood>0.25) * .w, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt0p5": "sum((flood>0.5) * .w, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt1": "sum((flood>1) * .w, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt2": "sum((flood>2) * .w, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt4": "sum((flood>4) * .w, na.rm = TRUE)",
+    "shareOfPeopleAffectedByFlddphGt8": "sum((flood>8) * .w, na.rm = TRUE)"
+  },
+  "outFilePrefixPath": "{CER_VARIABLE}/flood/floodZero",
+  "yearsFilter": null,
+  "regionRegex": null
+}

@@ -3,7 +3,7 @@
   "slurm": {
     "_class": ["Slurm", "Opts"],
     "prefix": "run",
-    "qos": "short",
+    "qos": "standby",
     "cpusPerTask": 1,
     "timeInMinutes": 1,
     "mail": true,
