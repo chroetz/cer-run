@@ -1,0 +1,49 @@
+{
+  "_class": ["ModelSelection", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 2,
+    "timeInMinutes": 200,
+    "mail": true,
+    "logDirPath": "./_log"
+  },
+  "outDirPath": "{CER_REGRESSION}/ModelSelection",
+  "outFileName": "All_Growth",
+  "outFormat": "HTML",
+  "name": "All_Growth",
+  "workDirPath": "{CER_REGRESSION}/ModelSelection",
+  "overwriteNoFeCsv": true,
+  "nRepsFinal": 100,
+  "seClusterVariables": ["theYear"],
+  "lambda": "seq(0, 1, 0.01)",
+  "nFolds": 10,
+  "cvClusterVariable": "theYear",
+  "timeTrendOrders": [0, 1, 2, 3],
+  "dataSetPaths": {
+    "Isimip": "{CER_VARIABLE}/dataIsimipLagged.csv",
+    "IsimipClean": "{CER_VARIABLE}/dataIsimipLaggedClean.csv",
+    "Mix": "{CER_VARIABLE}/dataMixLagged.csv",
+    "MixClean": "{CER_VARIABLE}/dataMixLaggedClean.csv"
+  },
+  "target": "log2growth",
+  "predictorListGenerator": {
+    "_class": ["PredictorListGenerator", "Opts"],
+    "elements": {
+      "main_and": [".tas", ".drought", ".flood", ".tc"],
+      ".tas_or": [
+        "",
+        "tas", 
+        ["tas", "tas_2"]
+      ],
+      ".drought_or": ["", "drought"],
+      "drought_lag": [0, 1, 2],
+      ".flood_or": ["", "flddphGt0"],
+      "flddphGt0_lag": [0, 1, 2],
+      ".tc_or": ["", "tc34kt"],
+      "tc34kt_lag": [0, 1, 2]
+    }
+  },
+  "cumulate": null
+}
