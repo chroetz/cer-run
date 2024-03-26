@@ -1,0 +1,54 @@
+{
+  "_class": ["ModelSelection", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 2,
+    "timeInMinutes": 200,
+    "mail": true,
+    "logDirPath": "./_log"
+  },
+  "outDirPath": "{CER_REGRESSION}/ModelSelection",
+  "outFileName": "Temp_Level",
+  "outFormat": "HTML",
+  "name": "Temp_Level",
+  "workDirPath": "{CER_REGRESSION}/ModelSelection",
+  "overwriteNoFeCsv": true,
+  "nRepsFinal": 100,
+  "seClusterVariables": ["theYear"],
+  "lambda": "seq(0, 1, 0.01)",
+  "nFolds": 10,
+  "cvClusterVariable": "theYear",
+  "timeTrendOrders": [0, 1, 2, 3],
+  "dataSetPaths": {
+    "Isimip": "{CER_VARIABLE}/dataIsimipLagged.csv",
+    "IsimipClean": "{CER_VARIABLE}/dataIsimipLaggedClean.csv",
+    "Mix": "{CER_VARIABLE}/dataMixLagged.csv",
+    "MixClean": "{CER_VARIABLE}/dataMixLaggedClean.csv"
+  },
+  "target": "log2growth",
+  "predictorListGenerator": {
+    "_class": ["PredictorListGenerator", "Opts"],
+    "elements": {
+      "main_and": [".tas", ".tasdev"],
+      ".tas_or": [
+        "",
+        "tas_d",
+        ["tas_d", "tas_2_d"],
+        "tasmin_d",
+        ["tasmin_d", "tasmin_2_d"],
+        "tasmax_d",
+        ["tasmax_d", "tasmax_2_d"]
+      ],
+      ".tasdev_or": [
+        "",
+        "tasDev11_d",
+        "tasSd_d",
+        "tasminSd_d",
+        "tasmaxSd_d"
+      ]
+    }
+  },
+  "cumulate": null
+}

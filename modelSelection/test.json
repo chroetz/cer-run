@@ -1,0 +1,44 @@
+{
+  "_class": ["ModelSelection", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 2,
+    "timeInMinutes": 200,
+    "mail": true,
+    "logDirPath": "./_log"
+  },
+  "outDirPath": "{CER_REGRESSION}/ModelSelection",
+  "outFileName": "TestTc",
+  "outFormat": "rmd",
+  "name": "TestTc",
+  "workDirPath": "{CER_REGRESSION}/ModelSelection",
+  "overwriteNoFeCsv": false,
+  "nRepsFinal": 10,
+  "seClusterVariables": ["theYear"],
+  "lambda": "seq(0, 1, 0.01)",
+  "nFolds": 10,
+  "cvClusterVariable": "theYear",
+  "timeTrendOrders": [2],
+  "dataSetPaths": {
+    "Isimip": "{CER_VARIABLE}/dataIsimipLagged.csv",
+    "IsimipClean": "{CER_VARIABLE}/dataIsimipLaggedClean.csv",
+    "Mix": "{CER_VARIABLE}/dataMixLagged.csv",
+    "MixClean": "{CER_VARIABLE}/dataMixLaggedClean.csv"
+  },
+  "target": "log2growth",
+  "predictorListGenerator": {
+    "_class": ["PredictorListGenerator", "Opts"],
+    "elements": {
+      "main_and": [".tas", ".tc"],
+      ".tas_or": [
+        "",
+        ["tas_d", "tas_2_d"]
+      ],
+      ".tc_or": ["", "tc34kt_d"],
+      "tc34kt_d_lag": [0, 1, 2, 3]
+    }
+  },
+  "cumulate": null
+}

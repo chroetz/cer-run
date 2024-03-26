@@ -1,0 +1,48 @@
+{
+  "_class": ["ModelSelection", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 2,
+    "timeInMinutes": 200,
+    "mail": true,
+    "logDirPath": "./_log"
+  },
+  "outDirPath": "{CER_REGRESSION}/ModelSelection",
+  "outFileName": "Flood_Growth_Cumul",
+  "outFormat": "HTML",
+  "name": "Flood_Growth_Cumul",
+  "workDirPath": "{CER_REGRESSION}/ModelSelection",
+  "overwriteNoFeCsv": true,
+  "nRepsFinal": 100,
+  "seClusterVariables": ["theYear"],
+  "lambda": "seq(0, 1, 0.01)",
+  "nFolds": 10,
+  "cvClusterVariable": "theYear",
+  "timeTrendOrders": [0, 1, 2, 3],
+  "dataSetPaths": {
+    "Isimip": "{CER_VARIABLE}/dataIsimipLagged.csv",
+    "IsimipClean": "{CER_VARIABLE}/dataIsimipLaggedClean.csv",
+    "Mix": "{CER_VARIABLE}/dataMixLagged.csv",
+    "MixClean": "{CER_VARIABLE}/dataMixLaggedClean.csv"
+  },
+  "target": "log2growth",
+  "predictorListGenerator": {
+    "_class": ["PredictorListGenerator", "Opts"],
+    "elements": {
+      "main_and": [".tas", ".flood"],
+      ".tas_or": [
+        "",
+        ["tas_d", "tas_2_d"]
+      ],
+      ".flood_or": ["", "flddphGt0", "flddphGt0p25", "flddphGt0p5", "flddphGt1", "flddphGt2"],
+      "flddphGt0_lag": [0, 1, 2, 3, 4, 5],
+      "flddphGt0p25_lag": [0, 1, 2, 3, 4, 5],
+      "flddphGt0p5_lag": [0, 1, 2, 3, 4, 5],
+      "flddphGt1_lag": [0, 1, 2, 3, 4, 5],
+      "flddphGt2_lag": [0, 1, 2, 3, 4, 5]
+    }
+  },
+  "cumulate": ["flddphGt0", "flddphGt0p25", "flddphGt0p5", "flddphGt1", "flddphGt2"]
+}
