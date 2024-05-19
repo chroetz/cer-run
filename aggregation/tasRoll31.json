@@ -1,0 +1,58 @@
+{
+  "_class": ["AggregateNaryMasked", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 1,
+    "timeInMinutes": 300,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 119
+  },
+  "targetFormat": {
+    "_class": ["GridFormat", "Opts"],
+    "nLon": 720,
+    "nLat": 360,
+    "lonIncreasing": true,
+    "latIncreasing": false,
+    "lonFirst": true
+  },
+  "maskFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin30.nc",
+  "maskSumFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin30_sum.nc",
+  "boundingBoxFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin30_boundingBox.nc",
+  "variableDataDescriptorList": {
+    "_class": ["DataDescriptor", "List", "Opts"],
+    "list": [
+      {
+        "_class": ["MultiFile", "DataDescriptor", "Opts"],
+        "name": "tas",
+        "dirPath": "/p/projects/isimip/isimip/ISIMIP3a/InputData/climate/atmosphere/obsclim/global/daily/historical/GSWP3-W5E5",
+        "pattern": "gswp3-w5e5_obsclim_tas_global_daily_\\d+_\\d+\\.nc"
+      },
+      {
+        "_class": ["SingleFile", "DataDescriptor", "Opts"],
+        "name": "pop",
+        "setNaToZero": true,
+        "filePath": "/p/projects/isimip/isimip/ISIMIP3a/InputData/socioeconomic/pop/histsoc/population_histsoc_30arcmin_annual_1901_2021.nc",
+        "dataVariableNames": "total-population"
+      },
+      {
+        "_class": ["MultiFile", "DataDescriptor", "Opts"],
+        "name": "tasRoll31",
+        "dirPath": "{CER_PROCESSED}/gswp3-w5e5-roll",
+        "pattern": "gswp3-w5e5_obsclim_tas_global_daily_\\d+_\\d+_rollMean31\\.nc"
+      }
+    ]
+  },
+  "aggregateTextList": {
+    "tasMean": "weighted.mean(apply(tas, 1:2, mean), mask*pop)",
+    "tasRoll31Mean": "weighted.mean(apply(tasRoll31, 1:2, mean), mask*pop)",
+    "tasDeviationRoll31": "weighted.mean(apply(tas-tasRoll31, 1:2, \\(x) mean(abs(x))), mask*pop)",
+    "maskSize": "sum(mask)",
+    "pop": "sum(mask*pop)"
+  },
+  "outFilePrefixPath": "{CER_VARIABLE}/gswp3-w5e5-roll/tasRoll31",
+  "yearsFilter": null,
+  "regionRegex": null
+}
