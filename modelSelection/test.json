@@ -22,9 +22,7 @@
   "cvClusterVariable": "theYear",
   "timeTrendOrders": [2],
   "dataSetPaths": {
-    "Isimip": "{CER_VARIABLE}/dataIsimipLagged.csv",
     "IsimipClean": "{CER_VARIABLE}/dataIsimipLaggedClean.csv",
-    "Mix": "{CER_VARIABLE}/dataMixLagged.csv",
     "MixClean": "{CER_VARIABLE}/dataMixLaggedClean.csv"
   },
   "target": "log2growth",
