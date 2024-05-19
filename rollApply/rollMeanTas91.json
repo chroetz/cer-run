@@ -1,0 +1,31 @@
+{
+  "_class": ["RollTimeApply", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 1,
+    "timeInMinutes": 15,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 180
+  },
+  "variableDataDescriptor": {
+        "_class": ["MultiFile", "DataDescriptor", "Opts"],
+        "name": "tas",
+        "dirPath": "/p/projects/isimip/isimip/ISIMIP3a/InputData/climate/atmosphere/obsclim/global/daily/historical/GSWP3-W5E5",
+        "pattern": "gswp3-w5e5_obsclim_tas_global_daily_\\d+_\\d+\\.nc"
+  },
+  "applyFunctionList": {
+    "rollMeanTas91": "mean"
+  },
+  "outFilePath": "{CER_PROCESSED}/gswp3-w5e5-roll/rollMeanTas91.nc",
+  "padding": [45,45],
+  "fill": "const",
+  "idxDim": "lat",
+  "lineCount": 2,
+  "timeRange": null,
+  "nBatches": 1,
+  "batchIndex": 1,
+  "optsAfterwardsIfOkFilePaths": "{CER_RUN}/rollApply/rollMeanTas91_concat.json"
+}
