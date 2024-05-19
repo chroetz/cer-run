@@ -26,5 +26,6 @@
   "lineCount": 2,
   "timeRange": null,
   "nBatches": 1,
-  "batchIndex": 1
+  "batchIndex": 1,
+  "optsAfterwardsIfOkFilePaths": "{CER_RUN}/rollApply/rollMeanPr11_concat.json"
 }
