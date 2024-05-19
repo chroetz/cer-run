@@ -5,7 +5,7 @@
     "prefix": "run",
     "qos": "standby",
     "cpusPerTask": 2,
-    "timeInMinutes": 200,
+    "timeInMinutes": 600,
     "mail": true,
     "logDirPath": "./_log"
   },
