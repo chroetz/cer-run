@@ -5,10 +5,10 @@
     "prefix": "run",
     "qos": "standby",
     "cpusPerTask": 1,
-    "timeInMinutes": 400,
-    "mail": false,
+    "timeInMinutes": 200,
+    "mail": true,
     "logDirPath": "{CER_RUN}/_log",
-    "nJobs": 1
+    "nJobs": 1694
   },
   "targetFormat": {
     "_class": ["GridFormat", "Opts"],
@@ -46,9 +46,9 @@
     ]
   },
   "aggregateTextList": {
-    "prExtreme": "weighted.mean(apply(pr>=thresh, 1:2, mean), mask*pop)"
+    "prExtreme": "{nt <- dim(pr)[3]; dim(pr) = c(prod(dim(pr)[1:2]), nt); weighted.mean(rowMeans(pr >= rep(thresh, times = nt)), mask*pop)}"
   },
   "outFilePrefixPath": "{CER_VARIABLE}/gswp3-w5e5-extreme/prExtreme",
-  "yearsFilter": [2000, 2001],
-  "regionRegex": "DEU"
+  "yearsFilter": null,
+  "regionRegex": null
 }
