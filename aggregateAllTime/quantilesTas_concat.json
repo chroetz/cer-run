@@ -5,7 +5,7 @@
     "prefix": "run",
     "qos": "standby",
     "cpusPerTask": 2,
-    "timeInMinutes": 300,
+    "timeInMinutes": 5,
     "mail": true,
     "logDirPath": "{CER_RUN}/_log",
     "nJobs": 1
