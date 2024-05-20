@@ -11,6 +11,6 @@
     "nJobs": 1
   },
   "dirPath": "{CER_PROCESSED}/gswp3-w5e5-quantiles",
-  "pattern": "quantilesTas_\\d+\\.nc",
-  "outFilePath": "{CER_PROCESSED}/gswp3-w5e5-quantiles/quantilesTas.nc"
+  "pattern": "quantilesPr_\\d+\\.nc",
+  "outFilePath": "{CER_PROCESSED}/gswp3-w5e5-quantiles/quantilesPr.nc"
 }

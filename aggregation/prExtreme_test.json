@@ -1,0 +1,54 @@
+{
+  "_class": ["AggregateNaryMasked", "Run", "Opts"],
+  "slurm": {
+    "_class": ["Slurm", "Opts"],
+    "prefix": "run",
+    "qos": "standby",
+    "cpusPerTask": 1,
+    "timeInMinutes": 300,
+    "mail": false,
+    "logDirPath": "{CER_RUN}/_log",
+    "nJobs": 1
+  },
+  "targetFormat": {
+    "_class": ["GridFormat", "Opts"],
+    "nLon": 720,
+    "nLat": 360,
+    "lonIncreasing": true,
+    "latIncreasing": false,
+    "lonFirst": true
+  },
+  "maskFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin30.nc",
+  "maskSumFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin30_sum.nc",
+  "boundingBoxFilePath": "{CER_PROCESSED}/mask/maskDoseArcmin30_boundingBox.nc",
+  "variableDataDescriptorList": {
+    "_class": ["DataDescriptor", "List", "Opts"],
+    "list": [
+      {
+        "_class": ["MultiFile", "DataDescriptor", "Opts"],
+        "name": "pr",
+        "dirPath": "/p/projects/isimip/isimip/ISIMIP3a/InputData/climate/atmosphere/obsclim/global/daily/historical/GSWP3-W5E5",
+        "pattern": "gswp3-w5e5_obsclim_pr_global_daily_\\d+_\\d+\\.nc"
+      },
+      {
+        "_class": ["SingleFile", "DataDescriptor", "Opts"],
+        "name": "pop",
+        "setNaToZero": true,
+        "filePath": "/p/projects/isimip/isimip/ISIMIP3a/InputData/socioeconomic/pop/histsoc/population_histsoc_30arcmin_annual_1901_2021.nc",
+        "dataVariableNames": "total-population"
+      },
+      {
+        "_class": ["SingleFile", "DataDescriptor", "Opts"],
+        "name": "thresh",
+        "setNaToZero": false,
+        "filePath": "{CER_PROCESSED}/gswp3-w5e5-quantiles/quantilesPr.nc"
+      }
+    ]
+  },
+  "aggregateTextList": {
+    "prExtreme": "weighted.mean(apply(pr>=thresh, 1:2, mean), mask*pop)"
+  },
+  "outFilePrefixPath": "{CER_VARIABLE}/gswp3-w5e5-extreme/prExtreme",
+  "yearsFilter": [2000, 2001],
+  "regionRegex": "DEU"
+}
