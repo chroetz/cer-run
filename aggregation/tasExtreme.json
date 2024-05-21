@@ -6,7 +6,7 @@
     "qos": "standby",
     "cpusPerTask": 1,
     "timeInMinutes": 200,
-    "mail": true,
+    "mail": false,
     "logDirPath": "{CER_RUN}/_log",
     "nJobs": 1694
   },
