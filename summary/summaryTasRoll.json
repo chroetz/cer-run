@@ -5,10 +5,10 @@
     "prefix": "run",
     "qos": "short",
     "cpusPerTask": 6,
-    "timeInMinutes": 15,
+    "timeInMinutes": 20,
     "mail": true,
     "logDirPath": "{CER_RUN}/_log",
-    "nJobs": 4
+    "nJobs": 3
   },
   "outDirPath": "{CER_EXPLORE}/summary",
   "dataFilePath": "{CER_VARIABLE}/gswp3-w5e5-roll/tasRoll.csv",

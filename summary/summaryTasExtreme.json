@@ -5,7 +5,7 @@
     "prefix": "run",
     "qos": "short",
     "cpusPerTask": 6,
-    "timeInMinutes": 15,
+    "timeInMinutes": 20,
     "mail": true,
     "logDirPath": "{CER_RUN}/_log",
     "nJobs": 4
