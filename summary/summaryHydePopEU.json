@@ -9,7 +9,7 @@
     "mail": true,
     "logDirPath": "{CER_RUN}/_log"
   },
-  "outFilePath": "{CER_EXPLORE}/summary/Hyde-pop-EU.html",
+  "outDirPath": "{CER_EXPLORE}/summary",
   "dataFilePath": "{CER_VARIABLE}/HYDE/HYDE3p3_population_DoseArcmin5.csv",
   "variableName": "population",
   "regionNameDelim": ".",

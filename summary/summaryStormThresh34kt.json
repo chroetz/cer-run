@@ -9,7 +9,7 @@
     "mail": true,
     "logDirPath": "{CER_RUN}/_log"
   },
-  "outFilePath": "{CER_EXPLORE}/summary/Storm-thresh34kt.html",
+  "outDirPath": "{CER_EXPLORE}/summary",
   "dataFilePath": "{CER_VARIABLE}/storm/storm.csv",
   "variableName": "thresh34kt",
   "regionNameDelim": ".",

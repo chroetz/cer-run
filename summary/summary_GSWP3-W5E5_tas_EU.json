@@ -9,7 +9,7 @@
     "mail": true,
     "logDirPath": "{CER_RUN}/_log"
   },
-  "outFilePath": "{CER_EXPLORE}/summary/GSWP3_W5E5-tas-EU.html",
+  "outDirPath": "{CER_EXPLORE}/summary",
   "dataFilePath": "{CER_VARIABLE}/gswp3-w5e5/tasDoseYear_pop_1950-2019.csv",
   "variableName": "tasMean_pop",
   "regionName": "iso",

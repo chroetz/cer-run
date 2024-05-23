@@ -9,7 +9,7 @@
     "mail": true,
     "logDirPath": "{CER_RUN}/_log"
   },
-  "outFilePath": "{CER_EXPLORE}/summary/Drought-percentile50.html",
+  "outDirPath": "{CER_EXPLORE}/summary",
   "dataFilePath": "{CER_VARIABLE}/drought/drought.csv",
   "variableName": "percentile50",
   "regionName": "region",

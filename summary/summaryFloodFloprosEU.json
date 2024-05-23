@@ -9,7 +9,7 @@
     "mail": true,
     "logDirPath": "{CER_RUN}/_log"
   },
-  "outFilePath": "{CER_EXPLORE}/summary/Flood-flopros-flddphGt0-EU.html",
+  "outDirPath": "{CER_EXPLORE}/summary",
   "dataFilePath": "{CER_VARIABLE}/flood/flood_flopros.csv",
   "variableName": "shareOfPeopleAffectedByFlddphGt0",
   "regionNameDelim": ".",

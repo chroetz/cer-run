@@ -9,7 +9,7 @@
     "mail": true,
     "logDirPath": "{CER_RUN}/_log"
   },
-  "outFilePath": "{CER_EXPLORE}/summary/DOSE-grp_pc_usd_2015.html",
+  "outDirPath": "{CER_EXPLORE}/summary",
   "dataFilePath": "{CER_VARIABLE}/DOSE/DOSE_V2.csv",
   "variableName": "grp_pc_usd_2015",
   "regionNameDelim": null,
