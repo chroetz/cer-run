@@ -10,6 +10,7 @@
     "logDirPath": "{CER_RUN}/_log"
   },
   "outDirPath": "{CER_EXPLORE}/summary",
+  "outFileNameGlue": "summary_{databaseName}_{variableName}_EU",
   "dataFilePath": "{CER_VARIABLE}/HYDE/HYDE3p3_population_DoseArcmin5.csv",
   "variableName": "population",
   "regionNameDelim": ".",

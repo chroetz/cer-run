@@ -10,6 +10,7 @@
     "logDirPath": "{CER_RUN}/_log"
   },
   "outDirPath": "{CER_EXPLORE}/summary",
+  "outFileNameGlue": "summary_{databaseName}_{variableName}_EU",
   "dataFilePath": "{CER_VARIABLE}/flood/flood_flopros.csv",
   "variableName": "shareOfPeopleAffectedByFlddphGt0",
   "regionNameDelim": ".",

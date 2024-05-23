@@ -10,6 +10,7 @@
     "logDirPath": "{CER_RUN}/_log"
   },
   "outDirPath": "{CER_EXPLORE}/summary",
+  "outFileNameGlue": "summary_{databaseName}_{variableName}_EU",
   "dataFilePath": "{CER_VARIABLE}/DOSE/DOSE_V2.csv",
   "variableName": "grp_pc_usd_2015",
   "regionNameDelim": null,

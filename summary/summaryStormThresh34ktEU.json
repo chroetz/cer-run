@@ -11,6 +11,7 @@
   },
   "outDirPath": "{CER_EXPLORE}/summary",
   "dataFilePath": "{CER_VARIABLE}/storm/storm.csv",
+  "outFileNameGlue": "summary_{databaseName}_{variableName}_EU",
   "variableName": "thresh34kt",
   "regionNameDelim": ".",
   "regionNamePartNames": ["GID_0", "subRegionId"],
